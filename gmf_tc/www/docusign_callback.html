@@ -1,0 +1,15 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div style="padding: 60px; font-family: sans-serif; max-width: 600px; margin: 0 auto; text-align: center;">
+  {% if success %}
+    <h2 style="color: #28a745;">Berhasil!</h2>
+  {% else %}
+    <h2 style="color: #dc3545;">Gagal</h2>
+  {% endif %}
+  <p style="font-size: 16px; margin: 20px 0;">{{ message }}</p>
+  {% if doc_name %}
+    <a href="/app/capability-submission/{{ doc_name }}" style="display:inline-block; padding:10px 24px; background:#007bff; color:white; border-radius:6px; text-decoration:none; margin-top:20px;">Kembali ke Dokumen</a>
+  {% endif %}
+</div>
+{% endblock %}
