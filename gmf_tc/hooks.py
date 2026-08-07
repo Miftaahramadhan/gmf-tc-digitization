@@ -256,3 +256,14 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+
+# Fixtures
+# --------
+# Export konfigurasi Role, Role Permission, dan Workspace milik project ini
+# supaya ikut ter-track di git dan bisa direplikasi ulang di instance lain.
+
+fixtures = [
+	{"dt": "Role", "filters": [["name", "in", ["TC Engineer", "TC Quality"]]]},
+	{"dt": "Workspace", "filters": [["name", "in", ["GMF TC"]]]},
+	{"dt": "Custom DocPerm", "filters": [["parent", "=", "Capability Submission"]]},
+]
